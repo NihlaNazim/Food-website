@@ -3,6 +3,7 @@ import "./Partners.css";
 
 const Partners: React.FC = () => {
     return (
+        //
         <div className="partners-section">
             <h1>AS SEEN IN</h1>
 
