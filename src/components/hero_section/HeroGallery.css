@@ -1,0 +1,106 @@
+
+.hero-gallery {
+  position: relative;
+  width: 100%;
+  height: 100vh;          /* or 100vh if you want full screen */
+  overflow: hidden;
+}
+
+.hero-gallery__slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-gallery__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dark gradient overlay on top of the image */
+.hero-gallery__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.75)
+  );
+}
+
+/* Text layer */
+.hero-gallery__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(2rem, 5vw, 4rem);
+    color: #ffffff;
+    gap: 1rem;
+}
+
+.hero-gallery__headline {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.hero-gallery__subheadline {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 30rem;
+    line-height: 1.4;
+}
+
+/* Simple styling for the play/pause button */
+.hero-gallery__play-toggle {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .hero-gallery__content {
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-gallery__headline {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .hero-gallery__subheadline {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    max-width: 100%;
+  }
+
+  .hero-gallery__play-toggle {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-gallery__content {
+    padding: 1rem;
+  }
+
+  .hero-gallery__headline {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .hero-gallery__subheadline {
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  }
+}

@@ -1,0 +1,197 @@
+.navbar {
+    width: 100%;
+    padding: 4px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    border-bottom: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+
+.logo img {
+    height: 80px;
+    cursor: pointer;
+}
+
+/* DESKTOP NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #c0392b;
+}
+
+/* DESKTOP DROPDOWN */
+.dropdown-parent:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown {
+    list-style: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #ffffff;
+    padding: 15px 0;
+    width: 150px;
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s ease-in-out;
+}
+
+.dropdown li a {
+    padding: 5px 20px;
+    display: block;
+    font-size: 14px;
+    color: black;
+}
+
+.dropdown li a:hover {
+    color: #c0392b;
+    background: #f8f8f8;
+}
+
+/* ORDER BUTTON (shared desktop + mobile) */
+.order-btn {
+    background: #c0392b;
+    color: white;
+    border: 2px solid black;
+    padding: 14px 28px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.order-btn:hover {
+    background: white;
+    color: black;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #000;
+    transition: 0.3s ease;
+}
+
+/* Optional: animate hamburger into X */
+.navbar.open .hamburger span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.navbar.open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+.navbar.open .hamburger span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+
+    .nav-links,
+    .nav-buttons {
+        display: none;       /* hidden by default on mobile */
+    }
+
+    .hamburger {
+        display: flex;       /* show hamburger on mobile */
+    }
+
+    /* When menu is open, show links stacked */
+    .navbar.open .nav-links,
+    .navbar.open .nav-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar.open .nav-links {
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .navbar.open .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 6px 0;
+    }
+
+    /* Make dropdowns always visible & inline under parent on mobile */
+    .navbar.open .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        border: none;
+        padding: 4px 0 0 16px;
+        gap: 4px;
+    }
+
+    .nav-buttons {
+        margin: 10px 0 0;
+    }
+
+    .navbar.open .nav-buttons .order-btn {
+        width: 100%;
+        padding: 10px 0;
+    }
+}

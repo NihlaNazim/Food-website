@@ -1,0 +1,49 @@
+.partners-section {
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center
+}
+
+.partners-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #091f68;
+}
+
+/* wrapper centers the slider and hides overflow */
+.slider-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* scrolling row of logos */
+.partners-slider {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    animation: slide 20s linear infinite;
+}
+
+.partners-slider img {
+    height: 120px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.partners-slider img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
