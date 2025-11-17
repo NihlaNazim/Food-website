@@ -12,28 +12,28 @@ type Slide = {
 const slides: Slide[] = [
   {
     id: 1,
-    imageUrl: "/pic_1.jpg",
+    imageUrl: "./pic_1.jpg",
     alt: "Delicious Food 1",
     headline: "Eat Well. Do Good.",
     subheadline: "Food with a purpose.",
   },
   {
     id: 2,
-    imageUrl: "/pic_2.jpg",
+    imageUrl: "./pic_2.jpg",
     alt: "Delicious Food 2",
     headline: "Crafted by migrant chefs.",
     subheadline: "Bold flavors. Big hearts.",
   },
   {
     id: 3,
-    imageUrl: "/pic_3.jpg",
+    imageUrl: "./pic_3.jpg",
     alt: "Delicious Food 3",
     headline: "From our kitchen to your city.",
     subheadline: "Arab–Latin inspired dishes.",
   },
   {
     id: 4,
-    imageUrl: "/pic_4.jpg",
+    imageUrl: "./pic_4.jpg",
     alt: "Delicious Food 4",
     headline: "Every meal gives back.",
     subheadline: "Buy a meal, give a meal.",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Navbar.css";
 
 export const Navbar = () => {
@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <nav className={`navbar ${isOpen ? "open" : ""}`}>
       <div className="logo">
-        <img src="/logo.png" alt="Logo" />
+        <img src="./logo.png" alt="Logo" />
       </div>
 
       {/* Hamburger – only visible on small screens */}
