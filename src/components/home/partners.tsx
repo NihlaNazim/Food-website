@@ -1,5 +1,5 @@
 import React from "react";
-import "./partners.css";
+import "./Partners.css";
 
 const Partners: React.FC = () => {
     return (
